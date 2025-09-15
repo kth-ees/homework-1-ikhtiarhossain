@@ -10,5 +10,13 @@ module decoder_tb;
     .one_hot(one_hot)
   );
 
-  // Complete your testbench here
+  initial begin
+    for (int i = 0; i < 10; i++) begin
+      binary = $urandom_range(0, 15);
+      #5;
+      $display("binary=%b one_hot=%b", binary, one_hot);
+    end
+    $finish;
+  end
+
 endmodule
